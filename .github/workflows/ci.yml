@@ -7,11 +7,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Code
         uses: actions/checkout@v4
 
@@ -20,6 +18,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+
+      - name: Give execute permission
+        run: chmod +x backend/mvnw
 
       - name: Build Backend
         run: |
